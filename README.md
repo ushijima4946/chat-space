@@ -28,7 +28,7 @@ Things you may want to cover:
 |column|type|options|
 |------|----|-------|
 |body|text|null: false|
-|image|string|null: false|
+|image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -40,7 +40,7 @@ Things you may want to cover:
 ## usersテーブル
 |column|type|options|
 |------|----|-------|
-|nickname|string|null: false,unique: true|
+|nickname|string|null: false,unique: true, index true|
 |email|string|null: false, unique: true|
 
 ### association
@@ -53,7 +53,7 @@ Things you may want to cover:
 ## groupテーブル
 |column|type|options|
 |------|----|-------|
-|groupname|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### association
 - has_many :users through: :members
@@ -71,8 +71,6 @@ Things you may want to cover:
 ### association
 - belongs_to :group
 - belongs_to :user
-
-
 
 
 
